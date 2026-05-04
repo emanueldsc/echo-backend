@@ -38,6 +38,7 @@ import {
     VotesRevealedPayload,
 } from '../shared/types/socket.types';
 import { buildEventEnvelope } from '../shared/utils/event-envelope';
+import { getFrontendOrigins } from '../shared/utils/frontend-origin';
 import { VotingService } from '../voting/voting.service';
 import { SessionService } from './session.service';
 
@@ -49,9 +50,7 @@ interface ParsedIncoming<TPayload> {
 
 @WebSocketGateway({
   cors: {
-    origin: (process.env.FRONTEND_ORIGIN ?? 'http://localhost:4200')
-      .split(',')
-      .map((origin) => origin.trim()),
+    origin: getFrontendOrigins(),
     credentials: true,
   },
 })

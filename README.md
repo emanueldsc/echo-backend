@@ -69,7 +69,8 @@ GET /
 - Para customizar:
 
 ```bash
-set FRONTEND_ORIGIN=http://localhost:4200,http://127.0.0.1:4200
+set ECHO_FRONTEND_ORIGIN=http://localhost,http://127.0.0.1
+set ECHO_FRONT_PORT=4200
 ```
 
 ## Contrato de eventos
